@@ -4,7 +4,9 @@
   "description": "Backend para una aplicación vue con typescript",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev index.ts"
+    "dev": "ts-node-dev index.ts",
+    "build": "tsc",
+    "start": "node dist"
   },
   "author": "Miguel Narváez",
   "license": "ISC",

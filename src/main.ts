@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+//Aplicación principal de vue
+import { createApp } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+//Se importa el enrutador
+import router from "./router/index";
+
+//Se indica, antes del mount, que use el router
+createApp(App).use(router).mount("#app");
