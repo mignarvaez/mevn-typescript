@@ -1,16 +1,20 @@
 <template>
-  <h1>Task detail</h1>
-  <!-- Para actualizar se requiere que se ejecute el formulario por eso el botón va dentro-->
-  <!-- El método handleUpdate ejecuta el llamado a la funcion encargada de actualizar la tarea. También se indica con prevent que
-no se reinice el formulario al presionar el botón-->
-  <form @submit.prevent="handleUpdate()">
-    <!-- Con el v-model se enlaza el componente con el objeto tarea actual -->
-    <input type="text" v-model="currentTask.title" />
-    <textarea rows="3" v-model="currentTask.description"></textarea>
-    <button>Actualizar</button>
-  </form>
-  <!-- El delete puede ser llamado fuera del formulario -->
-  <button @click="handleDelete()">Borrar</button>
+  <div class="col-md-4 offset-md-4">
+    <h1 class="text-center h3 mb-3">Task detail</h1>
+    <!-- Para actualizar se requiere que se ejecute el formulario por eso el botón va dentro-->
+    <!-- El método handleUpdate ejecuta el llamado a la funcion encargada de actualizar la tarea. También se indica con prevent que
+    no se reinice el formulario al presionar el botón-->
+    <form @submit.prevent="handleUpdate()" class="card card-body">
+      <!-- Con el v-model se enlaza el componente con el objeto tarea actual -->
+      <input type="text" v-model="currentTask.title" class="form-control mb-3"/>
+      <textarea rows="3" v-model="currentTask.description" class="form-control mb-3"></textarea>
+      <button class="btn btn-primary">Actualizar</button>
+    </form>
+    <!-- El delete puede ser llamado fuera del formulario -->
+    <div class="text-center">
+      <button @click="handleDelete()" class="btn btn-danger">Borrar</button>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { Task } from "@/interfaces/Task";
